@@ -9,8 +9,7 @@ import { TaskList } from '../../model/task-list';
 export class TodoListComponent implements OnInit {
 
   public taskList: Array<TaskList> = [
-  {task: "minha Nova Task", checked: true},
-    {task: "minha Nova Task 2", checked: false} 
+ 
   ];
 
   constructor() { }
@@ -28,5 +27,11 @@ export class TodoListComponent implements OnInit {
       this.taskList = [];
     }
     
+  }
+
+  public setEmmitTaskList(event: string){
+    this.taskList.push(
+      {task: event, checked: false}
+      )
   }
 }
